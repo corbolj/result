@@ -20,7 +20,7 @@ steps:
       - cur_minor_version=$(echo $current_tag | cut -d'.' -f2)
       - incremental_version=$(echo $current_tag | cut -d'.' -f3)
       - new_minor_version=$(($cur_minor_version+1))
-      - new_tag="${major_version}.${new_minor_version}.${incremental_version}"
+      - new_tag="${major_version}.${new_minor_version}.0"
       - cf_export NEW_TAG=$new_tag
   github_release:
     type: github-release
